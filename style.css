@@ -1,0 +1,817 @@
+@font-face {
+  font-family: comingsoon;
+  src: url(fonts/ComingSoon.ttf);
+}
+
+@font-face {
+  font-family: chalk;
+  src: url(fonts/Cafe.otf);
+}
+
+* {
+  font-family: comingsoon, Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ========================= Splash ========================= */
+
+.backdropsplash {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 1);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backdropsplash.disabled {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 5s, opacity 5s linear;
+  pointer-events: none;
+}
+
+.enterlogo {
+  background-image: url(images/pumpitupbtn.gif);
+  background-size: 12.5rem 2.5rem;
+  width: 12.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+}
+
+.enterlogo:hover {
+  scale: 1.05;
+  cursor: pointer;
+}
+
+/* ========================= MAKE IT RAIN ========================= */
+
+.moneyContainer {
+  display: none;
+}
+.moneyContainer.enabled {
+  display: block;
+  background-color: transparent;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  padding: 0;
+  z-index: 2;
+  pointer-events: none;
+  margin-left: 10rem;
+}
+
+@-moz-keyframes drop {
+  from {
+    top: -20px;
+  }
+  to {
+    top: 700px;
+  }
+}
+@-webkit-keyframes drop {
+  from {
+    top: -20px;
+  }
+  to {
+    top: 700px;
+  }
+}
+@-moz-keyframes bill {
+  0% {
+    -moz-transform: rotate(-180deg) translate(0px, 0px) rotateX(-360deg)
+      rotateY(-180deg);
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+  }
+  10% {
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 3px;
+  }
+  15% {
+    border-bottom-right-radius: 35px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 60px;
+  }
+  50% {
+    -moz-transform: rotate(180deg) translate(10px, 95px) rotateX(180deg)
+      rotateY(180deg);
+    border-bottom-left-radius: 50px;
+  }
+  60% {
+    border-top-left-radius: 60px;
+    border-top-right-radius: 3px;
+  }
+  70% {
+    border-top-left-radius: 10px;
+  }
+}
+
+@-webkit-keyframes bill {
+  0% {
+    -webkit-transform: rotate(-180deg) translate(0px, 0px) rotateX(-360deg)
+      rotateY(-180deg);
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+  }
+  10% {
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 3px;
+  }
+  15% {
+    border-bottom-right-radius: 35px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 60px;
+  }
+  50% {
+    -webkit-transform: rotate(180deg) translate(10px, 95px) rotateX(180deg)
+      rotateY(180deg);
+    border-bottom-left-radius: 50px;
+  }
+  60% {
+    border-top-left-radius: 60px;
+    border-top-right-radius: 3px;
+  }
+  70% {
+    border-top-left-radius: 10px;
+  }
+}
+@-moz-keyframes flip {
+  0% {
+    -moz-transform: rotateX(-180deg);
+  }
+  100% {
+    -moz-transform: rotateX(180deg);
+  }
+}
+.money div {
+  position: absolute;
+  top: -40px;
+  -moz-animation-name: drop, bill;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-direction: normal;
+  -moz-animation-timing-function: ease-in;
+  -webkit-animation-name: drop, bill;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+  -webkit-animation-timing-function: ease-in;
+}
+.bill {
+  background-image: url(images/pepedollar.jpg);
+  background-size: contain;
+  height: 63px;
+  width: 153px;
+  position: absolute;
+}
+.bill.b1 {
+  left: 40px;
+  -moz-animation-duration: 12s;
+  -webkit-animation-duration: 12s;
+}
+.bill.b2 {
+  font-size: 1.8em;
+  left: 120px;
+  -moz-animation-duration: 7s;
+  -webkit-animation-duration: 7s;
+}
+.bill.b3 {
+  left: 200px;
+  -moz-animation-duration: 11s;
+}
+.bill.b4 {
+  left: 280px;
+  -moz-animation-duration: 13s;
+}
+.bill.b5 {
+  left: 380px;
+  -moz-animation-duration: 8s;
+  -webkit-animation-duration: 8s;
+}
+
+.bill.b6 {
+  left: 480px;
+  -moz-animation-duration: 6s;
+  -webkit-animation-duration: 6s;
+}
+.bill.b7 {
+  left: 580px;
+  -moz-animation-duration: 12s;
+  -webkit-animation-duration: 12s;
+}
+.bill.b8 {
+  left: 680px;
+  -moz-animation-duration: 5s;
+  -webkit-animation-duration: 5s;
+}
+
+.bill.b9 {
+  left: 700px;
+  -moz-animation-duration: 11s;
+  -webkit-animation-duration: 11s;
+}
+
+.bill.b10 {
+  left: 720px;
+  -moz-animation-duration: 7s;
+  -webkit-animation-duration: 7s;
+}
+.bill.b11 {
+  left: 740px;
+  -moz-animation-duration: 15s;
+  -webkit-animation-duration: 15s;
+}
+.bill.b12 {
+  left: 750px;
+  -moz-animation-duration: 12s;
+  -webkit-animation-duration: 12s;
+}
+
+.bill.b13 {
+  left: 800px;
+  -moz-animation-duration: 6s;
+  -webkit-animation-duration: 6s;
+}
+.bill.b14 {
+  left: 840px;
+  -moz-animation-duration: 12s;
+  -webkit-animation-duration: 12s;
+}
+.bill.b15 {
+  left: 980px;
+  -moz-animation-duration: 5s;
+  -webkit-animation-duration: 5s;
+}
+
+.bill.b16 {
+  left: 1000px;
+  -moz-animation-duration: 11s;
+  -webkit-animation-duration: 11s;
+}
+
+.bill.b17 {
+  left: 1020px;
+  -moz-animation-duration: 7s;
+  -webkit-animation-duration: 7s;
+}
+.bill.b18 {
+  left: 1040px;
+  -moz-animation-duration: 15s;
+  -webkit-animation-duration: 15s;
+}
+.bill.b19 {
+  left: 1080px;
+  -moz-animation-duration: 22s;
+  -webkit-animation-duration: 22s;
+}
+
+/* ========================= Animation ========================= */
+
+.animationContainer {
+  display: none;
+}
+
+.animationContainer.enabled {
+  display: block;
+  z-index: 3;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  position: absolute;
+  pointer-events: none;
+}
+
+.pepehug {
+  width: 50%;
+  background-image: url(images/hug.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  height: 100%;
+  content: "";
+  opacity: 0;
+  animation: appearAndDisappear 1.25s forwards infinite; /* 5s duration, stays at final state */
+  margin-top: 10rem;
+}
+
+.feels {
+  width: 50%;
+  background-image: url(images/feelsgood.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  height: 100%;
+  content: "";
+  opacity: 0;
+  animation: appearAndDisappear 2s forwards infinite; /* 5s duration, stays at final state */
+  margin-top: 10rem;
+}
+
+@keyframes appearAndDisappear {
+  0% {
+    opacity: 0; /* Start invisible */
+    scale: 0.75;
+  }
+  25% {
+    opacity: 0.25; /* Fully visible */
+    scale: 1;
+  }
+  75% {
+    opacity: 0.25; /* Stay fully visible */
+    scale: 1.25;
+  }
+  100% {
+    opacity: 0; /* Fade out to invisible */
+    scale: 1.5;
+  }
+}
+
+/* ========================= Sections ========================= */
+
+.mainSection {
+  position: relative;
+  display: block;
+  background-color: #fff;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  background-size: 1920px 1080px;
+  background-image: url("images/catstockdarkbg.gif");
+}
+
+.mainSection.off {
+  background-image: url("images/catstocklargebgoff.png");
+}
+
+/* ========================= RAVE ========================= */
+
+.rave {
+  background: white;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  pointer-events: none;
+  -webkit-animation: raveOn 0.46s infinite;
+}
+
+@-webkit-keyframes raveOn {
+  0% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.rave.off {
+  display: none;
+}
+
+.rave2 {
+  background: green;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  pointer-events: none;
+  -webkit-animation: rave2On 0.92s infinite;
+}
+
+@-webkit-keyframes rave2On {
+  0% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.rave2.off {
+  display: none;
+}
+
+/* ========================= Centre objects ========================= */
+
+.subSection {
+  position: static;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 15%;
+}
+
+.pepeDJ {
+  background: url(images/djpepe.gif) no-repeat;
+  background-size: contain;
+  display: inline-block;
+  width: 634px;
+  height: 765px;
+  zoom: 0.5;
+}
+
+.pepeDJ.off {
+  background: url(images/djpepeoff.png);
+}
+
+.speakerLeft,
+.speakersRight {
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+}
+
+.speakerLeftTop {
+  background: url(images/pumpspeaker.png) no-repeat;
+  z-index: 1;
+}
+
+.speakerLeftTop.enabled {
+  background: url(images/pumpdownspeaker.png) no-repeat;
+}
+
+.speakerLeftTop,
+.speakerLeftBottom,
+.speakerRightTop,
+.speakerRightBottom {
+  background-size: contain;
+  display: inline-block;
+  width: 421px;
+  height: 511px;
+  zoom: 0.6;
+  cursor: pointer;
+  -webkit-animation: pulse 0.46s infinite;
+}
+
+.speakerLeftTop:hover,
+.speakerLeftBottom:hover,
+.speakerRightTop:hover,
+.speakerRightBottom:hover {
+  scale: 1.05;
+  filter: brightness(1.5);
+}
+
+.speakerLeftTop.off,
+.speakerLeftBottom.off,
+.speakerRightTop.off,
+.speakerRightBottom.off {
+  -webkit-animation: pulse 0s infinite;
+}
+
+.rain {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.7;
+}
+
+.speakerLeftBottom {
+  background: url(images/xspeaker.png) no-repeat;
+}
+
+.speakerRightTop {
+  background: url(images/pfspeaker.png) no-repeat;
+  z-index: 1;
+}
+
+.speakerRightBottom {
+  background: url(images/dsspeaker.png) no-repeat;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ------------------------ CROWD ------------------------ */
+
+.crowdSection {
+  position: absolute;
+  width: 100vw;
+  height: 50%;
+  bottom: 0;
+  display: flex;
+  pointer-events: none;
+}
+
+.crowd-1 {
+  position: absolute;
+  background: url(images/crowd1.png) repeat-x;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  bottom: -9rem;
+  transform-origin: bottom;
+  animation-timing-function: ease;
+  -webkit-animation: bounceOn 1s infinite;
+}
+
+@-webkit-keyframes bounceOn {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  50% {
+    transform: scale(1.05, 1) translateY(-100px);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+
+.crowd-2 {
+  position: absolute;
+  background: url(images/crowd2.png) repeat-x;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  bottom: -8rem;
+  transform-origin: bottom;
+  animation-timing-function: ease;
+  -webkit-animation: bounceOn 0.9s infinite;
+}
+
+@-webkit-keyframes bounceOn {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  50% {
+    transform: scale(1.025, 1) translateY(-100px);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+
+.crowd-3 {
+  position: absolute;
+  background: url(images/crowd3.png) repeat-x;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  bottom: -7rem;
+  transform-origin: bottom;
+  animation-timing-function: ease;
+  -webkit-animation: bounceOn 0.8s infinite;
+}
+
+@-webkit-keyframes bounceOn {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  50% {
+    transform: scale(1, 1) translateY(-100px);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+
+.crowd-1.off,
+.crowd-2.off,
+.crowd-3.off {
+  -webkit-animation: bounceOn 0s infinite;
+}
+
+/* ------------------------ FOOTER ------------------------ */
+
+footer {
+  position: fixed;
+  bottom: 10pt;
+  right: 10pt;
+  z-index: 4;
+}
+
+.pumpMusic {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 5px 5px;
+  border-radius: 0.5rem;
+  border: 0.15rem solid #1ed760;
+  background-color: #1ed760;
+}
+
+.pumpAlbum {
+  background: url(images/albumcover.png) no-repeat;
+  background-size: contain;
+  display: inline-block;
+  width: 75px;
+  height: 75px;
+  border-radius: 0.5rem;
+}
+
+.musicDescription {
+  color: white;
+}
+
+.pumpAlbum.collapsed {
+  display: none;
+}
+
+.musicDescription.collapsed {
+  display: none;
+}
+
+.pumpDescription {
+  font-size: 0.75rem;
+}
+
+.pauseMusic {
+  background: url(images/pausebutton.png) no-repeat;
+  background-size: contain;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  border: none;
+  align-self: flex-end;
+}
+
+.playMusic {
+  background: url(images/playbutton.png) no-repeat;
+  background-size: contain;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+/* ------------------------ Responsive ------------------------ */
+
+@media (max-width: 1185px) {
+  .subSection {
+    gap: 5%;
+  }
+
+  .pepehug {
+    margin-top: 30rem;
+  }
+
+  .feels {
+    margin-top: 20rem;
+  }
+}
+
+@media (max-width: 920px) {
+  /* ========================= Header ========================= */
+
+  header {
+    z-index: 4;
+    width: 100vw;
+    height: 10rem;
+    position: fixed;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .speakerLeftHeader,
+  .speakerRightHeader {
+    width: 20rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .speakerLeftOne {
+    background: url(images/pumpspeaker.png) no-repeat;
+  }
+
+  .speakerLeftOne.enabled {
+    background: url(images/pumpdownspeaker.png) no-repeat;
+  }
+
+  .speakerLeftTwo {
+    background: url(images/xspeaker.png) no-repeat;
+  }
+
+  .speakerRightOne {
+    background: url(images/pfspeaker.png) no-repeat;
+  }
+
+  .speakerRightTwo {
+    background: url(images/dsspeaker.png) no-repeat;
+  }
+
+  .speakerLeftOne,
+  .speakerLeftTwo,
+  .speakerRightOne,
+  .speakerRightTwo {
+    background-size: contain;
+    display: inline-block;
+    width: 421px;
+    height: 511px;
+    zoom: 0.25;
+    -webkit-animation: pulse 0.46s infinite;
+  }
+
+  .speakerLeftOne:hover,
+  .speakerLeftTwo:hover,
+  .speakerRightOne:hover,
+  .speakerRightTwo:hover {
+    scale: 1.05;
+    filter: brightness(1.5);
+  }
+
+  .speakerLeftOne.off,
+  .speakerLeftTwo.off,
+  .speakerRightOne.off,
+  .speakerRightTwo.off {
+    -webkit-animation: pulse 0s infinite;
+  }
+
+  .subSection {
+    gap: 5%;
+  }
+
+  .speakerLeftTop,
+  .speakerLeftBottom,
+  .speakerRightTop,
+  .speakerRightBottom {
+    display: none;
+  }
+
+  .pepeDJ {
+    zoom: 0.4;
+    margin-bottom: -7.5rem;
+  }
+
+  .moneyContainer.enabled {
+    margin-left: 0;
+  }
+
+  .bill {
+    background-image: url(images/pepedollar.jpg);
+    background-size: contain;
+    height: 42px;
+    width: 102px;
+    position: absolute;
+  }
+}
+
+@media (max-width: 600px) {
+  /* ========================= Header ========================= */
+
+  .speakerLeftHeader,
+  .speakerRightHeader {
+    gap: 0;
+  }
+
+  .speakerLeftOne,
+  .speakerLeftTwo,
+  .speakerRightOne,
+  .speakerRightTwo {
+    width: 421px;
+    height: 511px;
+    zoom: 0.2;
+    -webkit-animation: pulse 0.46s infinite;
+  }
+
+  .speakerLeftOne:hover,
+  .speakerLeftTwo:hover,
+  .speakerRightOne:hover,
+  .speakerRightTwo:hover {
+    scale: 1.05;
+    filter: brightness(1.5);
+  }
+
+  .pepehug {
+    margin-top: 20rem;
+  }
+
+  .moneyContainer.enabled {
+    margin-left: 0;
+  }
+}
