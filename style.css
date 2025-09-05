@@ -384,7 +384,7 @@ body {
   background-position: center center;
   height: 100vh;
   background-size: 1920px 1080px;
-  background-image: url("images/catstockdarkbg.gif");
+  background-image: url("https://pub-be489ccafe0f41aaa80b3ad62d851e25.r2.dev/catstockdarkbg.gif");
 }
 
 .mainSection.off {
