@@ -737,12 +737,11 @@ footer {
 }
 
 @media (max-width: 920px) {
-  /* ========================= Header ========================= */
-
-  .address,
-  #btn-copy {
+  .address {
     display: none;
   }
+
+  /* ========================= Header ========================= */
 
   header {
     z-index: 4;
@@ -841,6 +840,10 @@ footer {
 }
 
 @media (max-width: 600px) {
+  .address {
+    display: none;
+  }
+
   /* ========================= Header ========================= */
 
   .speakerLeftHeader,
