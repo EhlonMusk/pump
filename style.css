@@ -391,6 +391,27 @@ body {
   background-image: url("images/catstocklargebgoff.png");
 }
 
+.address {
+  font-size: 30px;
+  margin: 30px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#btn-copy {
+  width: 30px;
+  transition: all 0.2s;
+}
+
+#btn-copy:hover {
+  scale: 1.1;
+}
+
 /* ========================= RAVE ========================= */
 
 .rave {
@@ -717,6 +738,10 @@ footer {
 
 @media (max-width: 920px) {
   /* ========================= Header ========================= */
+
+  .address {
+    display: none;
+  }
 
   header {
     z-index: 4;
