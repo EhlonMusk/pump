@@ -738,7 +738,7 @@ footer {
 
 @media (max-width: 920px) {
   .address {
-    display: none;
+    display: none !important;
   }
 
   /* ========================= Header ========================= */
@@ -840,10 +840,6 @@ footer {
 }
 
 @media (max-width: 600px) {
-  .address {
-    display: none;
-  }
-
   /* ========================= Header ========================= */
 
   .speakerLeftHeader,
