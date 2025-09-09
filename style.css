@@ -739,7 +739,8 @@ footer {
 @media (max-width: 920px) {
   /* ========================= Header ========================= */
 
-  .address {
+  .address,
+  #btn-copy {
     display: none;
   }
 
